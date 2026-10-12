@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512"><rect width="512" height="512" rx="112" fill="#0E5A66"/>
+  <g transform="translate(256.00 256.00) rotate(14)">
+    <defs><clipPath id="capl"><rect x="-87.5" y="-227.5" width="175" height="455" rx="87.5"/></clipPath></defs>
+    <g clip-path="url(#capl)">
+      <rect x="-175" y="-455" width="350" height="910" fill="#FFC94D"/>
+      <g transform="translate(0 9.1) rotate(-18)">
+        <rect x="-175" y="-682.5" width="350" height="682.5" fill="#FEF9EF"/>
+        <rect x="-175" y="-6.125000000000001" width="350" height="12.250000000000002" fill="#0E5A66"/>
+      </g>
+      <rect x="-87.5" y="-227.5" width="175" height="455" rx="87.5" fill="none" stroke="#FEF9EF" stroke-width="45.5"/>
+    </g>
+  </g></svg>

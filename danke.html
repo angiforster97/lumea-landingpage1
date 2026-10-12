@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumea · Danke</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32">
+  <link rel="preload" href="/assets/fonts/DMSans-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- TRACKING: Subscribe + Purchase feuern aus site.js – genau einmal pro
+       Bestellung (Merker in sessionStorage), nur nach Einwilligung, nie bei
+       Direktaufruf ohne Bestellung. Bewusst keine Gesundheitsbegriffe auf
+       dieser Seite. -->
+  <script src="/assets/js/tracking.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
+</head>
+<body data-page="danke">
+  <div class="demo-bar"><strong>Fiktives Produkt · Probearbeit.</strong> Es werden keine Bestellungen ausgeführt und keine Zahlungen erhoben.</div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Lumea Startseite"><img src="/assets/img/logo.svg" alt="Lumea" width="112" height="28"></a>
+    </div>
+  </header>
+
+  <main class="danke">
+    <div class="wrap">
+      <div id="with-order">
+        <h1>Erledigt. Das war der aufwendigste Teil.</h1>
+        <p>Deine erste Lieferung ist unterwegs und kommt in 2 bis 3 Werktagen.</p>
+        <div class="summary">
+          <table>
+            <tr><td>Bestellnummer</td><td id="order-id"></td></tr>
+            <tr><td>Heute bezahlt</td><td>14,50 €</td></tr>
+            <tr><td>Nächste Abbuchung</td><td>29,00 € am <span id="next-charge"></span></td></tr>
+            <tr><td>Kündigen</td><td style="font-weight:400">jederzeit über <a href="/kuendigen">„Verträge hier kündigen“</a> oder den Link in deiner Bestätigungsmail</td></tr>
+          </table>
+        </div>
+        <h2 style="font-size:1.3rem">Kleiner Tipp für den Anfang</h2>
+        <p>Stell die Dose dorthin, wo dein Tag beginnt: neben die Kaffeemaschine, die Zahnbürste oder den Laptop. Rituale halten sich da, wo man sie sieht.</p>
+        <p class="note">Demo: Das war eine Testbestellung. Es wurde nichts abgebucht und nichts versendet.</p>
+      </div>
+
+      <div id="no-order" hidden>
+        <h1>Hier ist noch nichts zu sehen.</h1>
+        <p>Zu dieser Sitzung gibt es keine Bestellung.</p>
+        <a class="btn btn-primary" href="/">Zur Startseite</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Rechtliches">
+        <a href="/rechtliches#impressum">Impressum</a>
+        <a href="/rechtliches#datenschutz">Datenschutz</a>
+        <a href="/rechtliches#agb">AGB</a>
+        <a href="/rechtliches#widerruf">Widerrufsbelehrung</a>
+        <a href="#" data-consent-open>Cookie-Einstellungen</a>
+        <a class="kuendigen" href="/kuendigen">Verträge hier kündigen</a>
+      </nav>
+      <p>Produktbilder KI-generiert. Lumea ist ein fiktives Produkt für eine Probearbeit.</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumea · Bestellen</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32">
+  <link rel="preload" href="/assets/fonts/DMSans-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- TRACKING: InitiateCheckout (beim Laden) und AddPaymentInfo (Zahlart
+       gewählt) feuern aus site.js – nur nach Einwilligung. -->
+  <script src="/assets/js/tracking.js" defer></script>
+  <script src="/assets/js/site.js" defer></script>
+</head>
+<body data-page="bestellen">
+  <div class="demo-bar"><strong>Fiktives Produkt · Probearbeit.</strong> Es werden keine Bestellungen ausgeführt und keine Zahlungen erhoben.</div>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="Lumea Startseite"><img src="/assets/img/logo.svg" alt="Lumea" width="112" height="28"></a>
+      <span class="small">Sicher bestellen</span>
+    </div>
+  </header>
+
+  <main class="checkout">
+    <div class="wrap">
+      <ol class="progress" aria-label="Fortschritt"><li class="is-done">Schritt 1</li><li>Schritt 2</li></ol>
+
+      <!-- Formular sendet NICHTS an einen Server und speichert keine
+           personenbezogenen Daten (Demo; Datenminimierung). -->
+      <form id="order" novalidate>
+        <!-- SCHRITT 1 -->
+        <fieldset id="step-1" style="border:0;padding:0;margin:0">
+          <p class="step-label">Schritt 1 von 2</p>
+          <h1 tabindex="-1" style="font-size:clamp(1.7rem,7vw,2.4rem)">Wohin dürfen wir liefern?</h1>
+          <div class="row-2 eq">
+            <div class="field"><label for="vorname">Vorname</label><input type="text" id="vorname" name="vorname" autocomplete="given-name" required></div>
+            <div class="field"><label for="nachname">Nachname</label><input type="text" id="nachname" name="nachname" autocomplete="family-name" required></div>
+          </div>
+          <div class="field"><label for="email">E-Mail <small>(für Bestellbestätigung und Versandinfo)</small></label><input type="email" id="email" name="email" autocomplete="email" required></div>
+          <div class="field"><label for="strasse">Straße und Hausnummer</label><input type="text" id="strasse" name="strasse" autocomplete="street-address" required></div>
+          <div class="row-2">
+            <div class="field"><label for="plz">PLZ</label><input type="text" id="plz" name="plz" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" autocomplete="postal-code" required></div>
+            <div class="field"><label for="ort">Ort</label><input type="text" id="ort" name="ort" autocomplete="address-level2" required></div>
+          </div>
+          <div class="field"><label for="land">Land</label><input type="text" id="land" name="land" value="Deutschland" readonly><small>Versand nur innerhalb Deutschlands.</small></div>
+          <p class="small">Wir nutzen deine Angaben nur für die Bestellung. Details in der <a href="/rechtliches#datenschutz">Datenschutzerklärung</a>.</p>
+          <button type="button" id="to-step-2" class="btn btn-primary btn-block">Weiter zur Zahlung</button>
+        </fieldset>
+
+        <!-- SCHRITT 2 -->
+        <fieldset id="step-2" hidden style="border:0;padding:0;margin:0">
+          <p class="step-label">Schritt 2 von 2</p>
+          <h2 tabindex="-1" style="font-size:clamp(1.7rem,7vw,2.4rem)">Fast geschafft.</h2>
+
+          <p style="font-weight:700;margin-bottom:8px">Zahlart</p>
+          <!-- TRACKING: Auswahl löst AddPaymentInfo aus (ohne Zahlungsdaten) -->
+          <label class="radio"><input type="radio" name="zahlart" value="card" required> Kreditkarte</label>
+          <label class="radio"><input type="radio" name="zahlart" value="paypal" required> PayPal</label>
+          <p class="note">Demo: Es werden keine Zahlungsdaten abgefragt und nichts abgebucht.</p>
+
+          <div class="summary">
+            <table>
+              <tr><td colspan="2"><strong>Lumea Monatsabo, 30 Kapseln</strong></td></tr>
+              <tr><td>Heute fällig</td><td>14,50 €</td></tr>
+              <tr><td>Ab <span data-next-charge></span> alle 30 Tage</td><td>29,00 €</td></tr>
+              <tr><td>Versand</td><td>inklusive</td></tr>
+              <tr><td>Laufzeit</td><td>keine Mindestlaufzeit, jederzeit kündbar</td></tr>
+              <tr><td>Lieferadresse</td><td id="summary-address" style="font-weight:400"></td></tr>
+            </table>
+            <button type="button" id="back-to-1" class="link-btn small">Adresse ändern</button>
+          </div>
+
+          <p class="legal-pre">Es gelten unsere <a href="/rechtliches#agb">AGB</a>. Informationen zum <a href="/rechtliches#widerruf">Widerrufsrecht</a> und zum <a href="/rechtliches#datenschutz">Datenschutz</a>.</p>
+          <!-- Pflichtformulierung § 312j Abs. 3 BGB -->
+          <button type="submit" class="btn btn-primary btn-block">Zahlungspflichtig bestellen</button>
+        </fieldset>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <nav aria-label="Rechtliches">
+        <a href="/rechtliches#impressum">Impressum</a>
+        <a href="/rechtliches#datenschutz">Datenschutz</a>
+        <a href="/rechtliches#agb">AGB</a>
+        <a href="/rechtliches#widerruf">Widerrufsbelehrung</a>
+        <a href="#" data-consent-open>Cookie-Einstellungen</a>
+        <a class="kuendigen" href="/kuendigen">Verträge hier kündigen</a>
+      </nav>
+      <p>Produktbilder KI-generiert. Lumea ist ein fiktives Produkt für eine Probearbeit.</p>
+    </div>
+  </footer>
+</body>
+</html>

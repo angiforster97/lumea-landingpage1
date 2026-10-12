@@ -1,0 +1,34 @@
+# Saubere URLs aus dem Tracking-Konzept: /bestellen, /danke (keine Gesundheitsbegriffe)
+[[redirects]]
+  from = "/bestellen"
+  to = "/bestellen.html"
+  status = 200
+[[redirects]]
+  from = "/danke"
+  to = "/danke.html"
+  status = 200
+[[redirects]]
+  from = "/kuendigen"
+  to = "/kuendigen.html"
+  status = 200
+[[redirects]]
+  from = "/rechtliches"
+  to = "/rechtliches.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Fiktives Produkt: nicht indexieren
+    X-Robots-Tag = "noindex, nofollow"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    # Nur „Report-Only“: dokumentiert die erlaubten Tracking-Ziele, ohne das Pixel bei
+    # der Prüfung versehentlich zu blockieren.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' https://connect.facebook.net https://www.googletagmanager.com; connect-src 'self' https://www.facebook.com https://connect.facebook.net https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: https://www.facebook.com https://*.google-analytics.com https://www.googletagmanager.com; style-src 'self'; font-src 'self'"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

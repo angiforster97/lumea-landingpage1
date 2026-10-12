@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lumea · Verträge hier kündigen</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon-32.png" sizes="32x32">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <!-- TRACKING: Bewusst KEIN tracking.js auf dieser Seite. Kündigungen
+       werden nicht an Meta/Google gemeldet (kein Signal über Bestandskundinnen
+       an Werbeplattformen). -->
+  <script src="/assets/js/kuendigen.js" defer></script>
+</head>
+<body data-page="kuendigen">
+  <div class="demo-bar"><strong>Fiktives Produkt · Probearbeit.</strong> Es werden keine Bestellungen ausgeführt und keine Zahlungen erhoben.</div>
+  <header class="site-header"><div class="wrap"><a class="logo" href="/" aria-label="Lumea Startseite"><img src="/assets/img/logo.svg" alt="Lumea" width="112" height="28"></a></div></header>
+  <main class="checkout"><div class="wrap">
+    <h1 style="font-size:clamp(1.7rem,7vw,2.4rem)">Verträge hier kündigen</h1>
+    <p>Kein Login, kein Anruf, keine Begründung nötig. Du bekommst eine Bestätigung per E-Mail.</p>
+    <form id="kuendigung" novalidate>
+      <div class="field"><label for="k-name">Name</label><input type="text" id="k-name" autocomplete="name" required></div>
+      <div class="field"><label for="k-email">E-Mail, mit der du bestellt hast</label><input type="email" id="k-email" autocomplete="email" required></div>
+      <div class="field"><label for="k-nr">Bestellnummer <small>(optional)</small></label><input type="text" id="k-nr"></div>
+      <div class="field"><label><input type="radio" name="art" value="ordentlich" checked> Ordentliche Kündigung zum nächstmöglichen Zeitpunkt</label></div>
+      <!-- § 312k BGB: Bestätigungsschaltfläche „jetzt kündigen“ -->
+      <button type="submit" class="btn btn-secondary btn-block">Jetzt kündigen</button>
+    </form>
+    <div id="k-done" hidden>
+      <p class="note"><strong>Kündigung eingegangen.</strong> Demo: In dieser Probearbeit wird keine Kündigung verarbeitet.</p>
+    </div>
+  </div></main>
+  <footer class="site-footer"><div class="wrap"><nav aria-label="Rechtliches">
+    <a href="/rechtliches#impressum">Impressum</a> <a href="/rechtliches#datenschutz">Datenschutz</a> <a href="/rechtliches#agb">AGB</a> <a href="/rechtliches#widerruf">Widerrufsbelehrung</a> <a href="/rechtliches#datenschutz">Cookie-Einstellungen</a> <a class="kuendigen" href="/kuendigen">Verträge hier kündigen</a>
+  </nav><p>Produktbilder KI-generiert. Lumea ist ein fiktives Produkt für eine Probearbeit.</p></div></footer>
+</body>
+</html>
